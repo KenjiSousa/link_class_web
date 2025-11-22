@@ -32,26 +32,21 @@ export default function Home() {
   };
 
   const handleCredentialResponse = async (response: any) => {
-    console.log(1)
     const idToken = await response.credential;
 
-    console.log(2)
-    const res = await fetch(`${process.env.API_URL}/login`, {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/login`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ idToken }),
       credentials: "include",
     });
 
-    console.log(3)
     if (res.status !== 200) {
       alert((await res.json()).message);
       return;
     }
 
-    console.log(4)
-    router.push('/inicio');
-    console.log(5)
+    router.push('/menu');
   };
 
   return (
