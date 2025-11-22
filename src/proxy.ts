@@ -10,7 +10,7 @@ export async function proxy(request: NextRequest) {
 }
 
 async function loginValido(token: string | undefined): Promise<boolean> {
-  const res = await fetch("http://localhost:3000/api/login/validate", {
+  const res = await fetch(`${process.env.API_URL}/login/validate`, {
     headers: {
       "authorization": `Bearer ${token}`
     }
