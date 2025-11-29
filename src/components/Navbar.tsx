@@ -27,21 +27,12 @@ export default function Navbar() {
         </div>
       </div>
 
-      <nav className="hidden md:flex items-center gap-8 text-gray-500 text-sm font-medium">
-        <Link href="#" className="hover:text-[#e20613] transition-colors">
-          Criar Evento
+      <nav className="hidden md:flex items-center gap-5 text-gray-500 text-sm font-medium">
+        <Link href="#" className="hover:text-(--unired) border border-transparent hover:border-(--unired) p-2 rounded-md transition-colors">
+          Eventos
         </Link>
-        <Link href="#" className="hover:text-[#e20613] transition-colors">
-          Editar
-        </Link>
-        <Link href="#" className="hover:text-[#e20613] transition-colors">
-          Exibir QR Code
-        </Link>
-        <Link href="#" className="hover:text-[#e20613] transition-colors">
-          Histórico
-        </Link>
-        <Link href="#" className="hover:text-[#e20613] transition-colors">
-          Exportar Dados
+        <Link href="#" className="hover:text-(--unired) border border-transparent hover:border-(--unired) p-2 rounded-md transition-colors">
+          Histórico/Exportação
         </Link>
       </nav>
 

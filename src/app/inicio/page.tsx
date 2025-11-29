@@ -7,10 +7,9 @@ export default function Home() {
       <Navbar />
 
       <main className="flex flex-col items-center justify-center p-24">
-        <div className="bg-white p-8 rounded-lg shadow-md">
-          <h1 className="text-2xl font-bold mb-4">Bem-vindo ao Sistema</h1>
-          <p className="text-gray-600">Conteúdo da página de início aqui.</p>
-          <p style={{fontSize: '5em', marginTop: '20px', textAlign: 'center'}}>INICIO WORKS</p>
+        <div className="bg-white p-8 rounded-lg shadow-lg border-2 border-(--unired)">
+          <h1 className="text-2xl font-bold mb-4">Bem-vindo ao LinkClass!</h1>
+          <p className="text-gray-600">Clique nas opções acima para continuar.</p>
         </div>
       </main>
     </div>
