@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
+import { http } from "./api/http";
 
 export async function proxy(request: NextRequest) {
   if (!await loginValido(request.cookies.get('token')?.value)) {
@@ -10,10 +11,10 @@ export async function proxy(request: NextRequest) {
 }
 
 async function loginValido(token: string | undefined): Promise<boolean> {
-  const res = await fetch("http://localhost:3000/api/login/validate", {
+  const res = await http(`/login/validate`, {
     headers: {
       "authorization": `Bearer ${token}`
-    }
+    },
   });
 
   return res.status === 200;
