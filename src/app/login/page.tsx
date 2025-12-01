@@ -3,6 +3,7 @@
 import { useEffect } from "react";
 import GoogleButton from "react-google-button";
 import { useRouter } from "next/navigation";
+import { http } from "@/api/http";
 
 export default function Home() {
   const router = useRouter();
@@ -32,26 +33,19 @@ export default function Home() {
   };
 
   const handleCredentialResponse = async (response: any) => {
-    console.log(1)
     const idToken = await response.credential;
 
-    console.log(2)
-    const res = await fetch("http://localhost:3000/api/login", {
+    const res = await http(`/login`, {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ idToken }),
-      credentials: "include",
     });
 
-    console.log(3)
     if (res.status !== 200) {
       alert((await res.json()).message);
       return;
     }
 
-    console.log(4)
     router.push('/inicio');
-    console.log(5)
   };
 
   return (

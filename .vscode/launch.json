@@ -1,12 +1,17 @@
 {
-    "version": "0.2.0",
-    "configurations": [
-        {
-            "command": "npm run dev",
-            "name": "npm run dev",
-            "request": "launch",
-            "type": "node-terminal"
-        }
-    ]
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Next.js Debug",
+      "type": "node",
+      "request": "launch",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "dev"],
+      "console": "integratedTerminal",
+      "skipFiles": [
+        "<node_internals>/**",
+        "${workspaceFolder}/node_modules/**"
+      ]
+    }
+  ]
 }
-
